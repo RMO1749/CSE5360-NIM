@@ -17,6 +17,7 @@ File Structure:
 File Name: nim.py
 Description: Implementation of the Nim game with the Minimax algorithm.
 Execution: Run the script with Python from the terminal or command prompt.
+
 Classes:
 
 PickMarble:
