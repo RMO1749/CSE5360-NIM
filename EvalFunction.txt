@@ -1,0 +1,19 @@
+Evaluation Function Explanation
+
+Objective
+The evaluation function aims to guide the decision-making process of the AI player in the game. It assigns a value to nonterminal states and saves computation as the AI can choose actions as though it goes through the whole min max tree. This value reflects how desireable a state is, with positive values typically indicating desirable states and negative values indicating states that are less desirable. 
+
+Evaluation Function
+In this evaluation function, there are two main ideas being utilized. The first idea is to try keep our input marbles balanced. For example, if we have an input of 8red marbles and 2 blue marbles, then our eval function will work try to pick 2 red marbles in an attempt to balance out our inputs, resulting in a state of 6 red marbles and 2 blue marbles. This action should be chosen regardless of what version of the game we are playing(standard or misere).
+
+Balancing Marbles
+The main strategy employed in our eval function would be trying to keep the game state as balanced as possible. For instance, if there are more red marbles than blue marbles, the function will favor actions that reduce the number of red marbles and vice versa.
+
+Scoring Method
+To quantify the balance of marbles, the function calculates the absolute difference between the number of red and blue marbles. A higher difference indicates a less balanced state, while a lower difference reflects a more balanced state. To convert this into a useable score, the function subtracts the absolute difference from a fixed value, in our case 50. This results in higher scores for more balanced states and lower scores for less balanced ones.
+
+Handling Terminal States
+When the game is within one or two moves from a terminal state, the evaluation function adjusts its scoring based on the game version being played. In the standard version, if one of the piles has two or fewer marbles remaining, the function favors these states, because that could guarantee a win condition. Conversely, in the misère version, the function aims to avoid such states, as it seeks to force the opponent into choosing one of those states which would result in an empty pile and ensuring victory.
+
+Depth Consideration
+It's important to note that the evaluation function is only activated when the depth of the search exceeds our specified depth limit.
