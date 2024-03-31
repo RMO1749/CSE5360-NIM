@@ -35,7 +35,7 @@ display(self, state): Displays the current state of the game.
 
 terminal_test(self, state): Checks if the current state is a terminal state.
 
-evaluation_fn(self, state, depth, player): Evaluates non-terminal game states based on a heuristic function.
+evaluation_fn(self, state, depth, player): Evaluates non-terminal game states based on a heuristic function. Please note a text file explaining how the evaluation function works has been provided. 
 
 human(self, state): Enables human player interaction through a GUI.
 
